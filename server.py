@@ -20,6 +20,8 @@ def result():
         errors=True
     if len(request.form['comments'])<1:
         flash('Comments Can Not Be Empty')
+    if len(request.form['comments'])>120:
+        flash('Comments can not be more than 120 characters long. Try again.')
         errors=True
 
     if errors==True:
